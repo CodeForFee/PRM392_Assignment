@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class ApiClient {
 
     // ⚠️ Đổi IP này thành IP máy bạn chạy NestJS backend
-    private static final String BASE_URL = "https://nongeological-nevada-subglumaceous.ngrok-free.dev";
+    private static final String BASE_URL = "https://prmbe-production.up.railway.app";
     private static Retrofit retrofit;
     private static String authToken;
 
