@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_page"
+    android:orientation="vertical">
+
+    <com.example.assignment.ui.custom.TopBar
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="4dp">
+
+            <ImageView
+                android:id="@+id/ivProduct"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:scaleType="centerCrop"
+                android:background="@color/bg_page" />
+
+            <!-- Info Card Overlay -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="0dp"
+                android:layout_marginTop="-20dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="16dp"
+                    android:paddingHorizontal="24dp"
+                    android:paddingBottom="8dp">
+                    
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="4dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="-16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="#EEEEEE" />
+
+                        <TextView
+                            android:id="@+id/tvCategoryTag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary"
+                            android:background="@drawable/bg_chip_unselected"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:textSize="11sp"
+                            android:visibility="gone" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Product Name"
+                            android:textColor="@color/text_primary"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/llPriceQty"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvName"
+                            android:layout_marginTop="8dp"
+                            android:gravity="start"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvPrice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="24.000 VND"
+                                android:textColor="@color/text_primary"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageButton
+                                    android:id="@+id/btnMinus"
+                                    android:layout_width="28dp"
+                                    android:layout_height="28dp"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:src="@drawable/ic_minus"
+                                    android:tint="@color/text_primary" />
+
+                                <TextView
+                                    android:id="@+id/tvQty"
+                                    android:layout_width="24dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="1"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <ImageButton
+                                    android:id="@+id/btnPlus"
+                                    android:layout_width="28dp"
+                                    android:layout_height="28dp"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:src="@drawable/ic_plus"
+                                    android:tint="@color/text_primary" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <!-- Ice Level -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Ice Level"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    <RadioGroup
+                        android:id="@+id/rgIce"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+                        <RadioButton android:id="@+id/rbIce100" android:layout_width="0dp" android:layout_height="45dp" android:layout_weight="1" android:background="@drawable/bg_box_selector" android:button="@null" android:gravity="center" android:text="100%" android:textColor="@color/text_primary" android:checked="true" />
+                        <RadioButton android:id="@+id/rbIce70" android:layout_width="0dp" android:layout_height="45dp" android:layout_weight="1" android:layout_marginStart="8dp" android:background="@drawable/bg_box_selector" android:button="@null" android:gravity="center" android:text="70%" android:textColor="@color/text_primary" />
+                        <RadioButton android:id="@+id/rbIce50" android:layout_width="0dp" android:layout_height="45dp" android:layout_weight="1" android:layout_marginStart="8dp" android:background="@drawable/bg_box_selector" android:button="@null" android:gravity="center" android:text="50%" android:textColor="@color/text_primary" />
+                        <RadioButton android:id="@+id/rbIce0" android:layout_width="0dp" android:layout_height="45dp" android:layout_weight="1" android:layout_marginStart="8dp" android:background="@drawable/bg_box_selector" android:button="@null" android:gravity="center" android:text="0%" android:textColor="@color/text_primary" />
+                    </RadioGroup>
+
+                    <!-- Sugar Level -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Sugar Level"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/rgSugar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+                        <RadioButton android:id="@+id/rbSugar100" android:layout_width="0dp" android:layout_height="45dp" android:layout_weight="1" android:background="@drawable/bg_box_selector" android:button="@null" android:gravity="center" android:text="100%" android:textColor="@color/text_primary" android:checked="true" />
+                        <RadioButton android:id="@+id/rbSugar70" android:layout_width="0dp" android:layout_height="45dp" android:layout_weight="1" android:layout_marginStart="4dp" android:background="@drawable/bg_box_selector" android:button="@null" android:gravity="center" android:text="70%" android:textColor="@color/text_primary" />
+                        <RadioButton android:id="@+id/rbSugar50" android:layout_width="0dp" android:layout_height="45dp" android:layout_weight="1" android:layout_marginStart="4dp" android:background="@drawable/bg_box_selector" android:button="@null" android:gravity="center" android:text="50%" android:textColor="@color/text_primary" />
+                        <RadioButton android:id="@+id/rbSugar30" android:layout_width="0dp" android:layout_height="45dp" android:layout_weight="1" android:layout_marginStart="4dp" android:background="@drawable/bg_box_selector" android:button="@null" android:gravity="center" android:text="30%" android:textColor="@color/text_primary" />
+                        <RadioButton android:id="@+id/rbSugar0" android:layout_width="0dp" android:layout_height="45dp" android:layout_weight="1" android:layout_marginStart="4dp" android:background="@drawable/bg_box_selector" android:button="@null" android:gravity="center" android:text="0%" android:textColor="@color/text_primary" />
+                    </RadioGroup>
+
+                    <!-- Choose your size -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Choose your size"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/rgSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbS"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_box_selector"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="Small"
+                            android:textColor="@color/text_primary" />
+
+                        <RadioButton
+                            android:id="@+id/rbM"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_box_selector"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:checked="true"
+                            android:text="Regular"
+                            android:textColor="@color/text_primary" />
+
+                        <RadioButton
+                            android:id="@+id/rbL"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_box_selector"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="Large"
+                            android:textColor="@color/text_primary" />
+                    </RadioGroup>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <RelativeLayout
+            android:id="@+id/btnCartBottom"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_input"
+            android:padding="12dp">
+            
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_cart"
+                android:tint="@color/text_primary" />
+                
+            <TextView
+                android:id="@+id/tvCartBadgeBottom"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/bg_badge"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/primary"
+            android:text="Add to My Bag"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp" />
+    </LinearLayout>
+
+</LinearLayout>
